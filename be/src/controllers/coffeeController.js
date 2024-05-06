@@ -79,7 +79,7 @@ exports.updateCoffe = async(request, response) =>{
                 })
             }
         })
-        const coffee_id = request.params._id
+        const coffee_id = request.params.id
         let selectedcoffee = await coffeeModel.findOne({
             where: { coffee_id: coffee_id },
           })
@@ -124,7 +124,7 @@ exports.updateCoffe = async(request, response) =>{
 
 exports.deleteCoffee = async (request, response) =>{
     try {
-        let coffee_id = request.params._id
+        let coffee_id = request.params.id
         const coffeeData = await coffeeModel.findOne({
             where: { coffee_id: coffee_id }
         })
